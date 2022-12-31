@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+        body{
+            margin: 0;
+        }
       #track {
         position: absolute;
         z-index: -20;
@@ -61,16 +64,30 @@
       }
       #result{
         font-size: larger;
+        margin-left: 15rem;
         font-family: 'Courier New', Courier, monospace;
         color: rgb(0, 0, 0);
       border-color: solid red;
       }
       #help{
-        border-color: red;
-        margin: -6rem 70rem auto;
+        margin: -6rem 60rem auto;
       }
       #textq{
-        width: 30rem;
+        background-color: aquamarine;
+        width: 40rem;
+      }
+      #hte{
+        color: darkblue;
+        background-color: burlywood;
+        width: 33rem;
+      }
+      #wte{
+        color: rgb(0, 0, 0);
+        width: 90px;
+        height: 225px;
+        background-color: rgb(124, 166, 66);
+        border: 2px;
+        border-radius: 4px;
       }
     </style>
   </head>
@@ -86,12 +103,13 @@
     </div>
     <input placeholder="Type Words Here!" id="input">
 
-    <button id="button">Check</button>
+    <button id="button">Accelerator</button>
 
     <p id="result"></p>
     <div id="help">
+        <p id="hte">Type words to move your car, The one which reaches the finish-line first will win! </p>
  <p id="textq" style="color: blue;"><span style="color: crimson; font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">THE WORDS U CAN TYPE IN INPUT FIELD! </span><br>(NOTE: IT IS CASE SENSITIVE SO ALL CHARACTERS SHOULD BE SMALL.)</p>       
-1)."random"
+<p id="wte">1)."random"
 <br>
 2)."true"
 <br>
@@ -113,8 +131,7 @@
 <br>
 11)"false"
 <br>
-12)."mario"
-
+12)."mario"</p>
     </div>
     <script>
       const track = document.getElementById("track");

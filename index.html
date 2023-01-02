@@ -9,15 +9,17 @@
   <style>
     body {
       margin-top: -1rem;
-     
+     background-image: url("backg.jpg");
+  background-repeat: repeat;
+    overflow: hidden;
     }
 
     #track {
       position: absolute;
       z-index: -20;
-      top: 9px;
+      top: 15rem;
       background-size: cover;
-      width: 220vw;
+      width: 180vw;
       height: 400px;
       margin: 0;
       background-image: url(road.png);
@@ -90,10 +92,13 @@
     body{
       overflow: hidden;
     }
-}  
+}  #game-container{
+  position: relative;
+  display: flex;
+}
     #input {
-      margin-top: 27rem;
-      margin-left: 10rem;
+      margin-top: 43rem;
+      margin-left: 25rem;
     }
 
     #result {
@@ -105,14 +110,17 @@
     }
 
     #help {
-      margin: 1rem 1rem auto;
+      position: absolute;
+      display: flex;
+      margin: -45rem 5rem auto;
       border: 2px;
-      width: 38rem;
+      height: 6rem;
+      width: 46rem;
       border-color: brown;
       background-color: burlywood;
     }
     #vtn{
-      margin: 1rem 10rem auto;
+      margin: 1rem 27rem auto;
     }
     #imgf{
       margin-top: -4rem;
@@ -140,13 +148,12 @@
     <input placeholder="Type any word" type="text" id="input" name="input"><br>
   </form>
   <button id="vtn" onclick="restartGame()">Restart</button>
-
-
   <p id="result"></p>
   <div id="help">
-    <p id="hte">Type words to move your car, The one which reaches the finish-line first will win! </p>
-    <p id="textq" style="color: blue;">(NOTE: IT IS CASE SENSITIVE SO FIRST LETTER SHOULD BE CAPITAL REST SHOULD BE
+    <p style="color: blue; text-align: center;">(
+      Type words to move your car, The one which reaches the finish-line first will win!<br> <br>NOTE: IT IS CASE SENSITIVE SO FIRST LETTER SHOULD BE CAPITAL REST SHOULD BE
       SMALL.<br>PRESS "Enter" TO ENTER THE VALUE)</p>
+      </div>
     <script>
       const track = document.getElementById("track");
 

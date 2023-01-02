@@ -131,7 +131,7 @@
   <div id="help">
     <p id="hte">Type words to move your car, The one which reaches the finish-line first will win! </p>
     <p id="textq" style="color: blue;">(NOTE: IT IS CASE SENSITIVE SO FIRST LETTER SHOULD BE CAPITAL REST SHOULD BE
-      SMALL.<br>PRESS "SPACE" TO ENTER THE VALUE)</p>
+      SMALL.<br>PRESS "Enter" TO ENTER THE VALUE)</p>
     <script>
       const track = document.getElementById("track");
 
@@ -680,7 +680,7 @@
         }
       }
       function handleKeyPress(event) {
-        if (event.key === ' ') {
+        if (event.key === 'Enter') {
           // Prevent the default action of the space key
           event.preventDefault();
           checkWord();

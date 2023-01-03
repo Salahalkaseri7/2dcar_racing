@@ -3,22 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salah's-2D-car-racing-game</title>
     <style>
       body {
+        margin: 0;
         position: relative;
         width: 100vw;
+        height: 500vh;
         margin-top: -1rem;
-        background-image: url("backg.jpg");
-        background-repeat: repeat;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: cover;
         overflow: hidden;
+        background-image: url("cloud.png");
       }
 
       #track {
         position: absolute;
         z-index: -20;
-        top: 12rem;
+        top: 15rem;
         background-size: cover;
         width: 180vw;
         height: 25rem;
@@ -36,7 +40,7 @@
         margin-top: 4rem;
         background: url("blue_car.png") no-repeat center;
         background-size: cover;
-        position: absolute;
+        position: relative;
         transform: rotate(180deg);
         border: 0px solid blue;
         z-index: -10;
@@ -45,16 +49,17 @@
       #car2 {
         width: 100px;
         height: 60px;
-        margin-top: 17rem;
+        margin-top: 11rem;
         background: url("green_car.png") no-repeat center;
         background-size: cover;
-        position: absolute;
+        position: relative;
         transform: rotate(180deg);
         border: 0px solid blue;
         z-index: -10;
       }
 
       #finish-line {
+        margin-top: -22.5rem;
         width: 10px;
 
         height: 400px;
@@ -98,30 +103,70 @@
         display: flex;
       }
       #input {
-        margin-top: 39rem;
-        margin-left: 1rem;
+        margin-top: 40rem;
+        margin-left: 4rem;
+        width: 9rem;
+        height: 2rem;
+        text-align: center;
       }
 
       #help {
+        display: inline-block;
+        position: relative;
         text-align: center;
         position: absolute;
         display: flex;
-        margin: -42rem 2rem auto;
+        margin: -46rem 1rem auto;
         border: 2px;
         height: 9rem;
         width: 30rem;
         border-color: brown;
-        background-color: burlywood;
+        background-color: rgb(5, 211, 239);
+        border-radius: 2rem;
       }
       #vtn {
-        margin: 1rem 3rem auto;
+        margin:2rem 5rem auto;
+        width: 7rem;
+        height: 2rem;
+        background-color: black;
+        color: aliceblue;
       }
       #imgf {
-        margin-top: -4rem;
+        margin-top: -5rem;
         margin-left: -16rem;
         width: 51rem;
         height: 32rem;
         transform: rotate(76deg);
+      }
+      .word {
+        display: inline-block;
+      }
+      #container1 {
+        background-color: rgb(255, 255, 255);
+        height: 5rem;
+        width: 7rem;
+        margin: -5rem 16rem auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2rem;
+        background-color: rgb(29, 251, 251);
+      }
+      #result{
+        position: relative;
+        display: inline-block;
+        background-color: black;
+        margin: -8rem 15rem auto;
+        width: 15rem;
+        height:7rem;
+        color: antiquewhite;
+        border-radius: 1rem;
+        text-align: center;
+        margin: 1rem auto;
+      }
+      #cld{
+     
       }
     </style>
   </head>
@@ -145,14 +190,16 @@
         name="input"
       /><br />
     </form>
-    <button id="vtn" onclick="restartGame()">Restart</button>
+    <button id="vtn" onclick="restartGame()">Restart-Game</button>
+    <div id="container1"></div>
     <div id="help">
-      <p id="result">
+      <p>
         Type words to move your car, The one which reaches the finish-line first
         will win!<br />
         <br />NOTE: IT IS CASE SENSITIVE SO FIRST LETTER SHOULD BE CAPITAL REST
         SHOULD BE SMALL.<br />PRESS "Enter" TO ENTER THE VALUE)
       </p>
+      <p id="result"></p>
     </div>
     <script>
       const track = document.getElementById("track");
@@ -3181,6 +3228,19 @@
         "Zone",
       ];
 
+      let index = 0;
+
+      function updateText() {
+        // Choose a random index
+        const randomIndex = Math.floor(Math.random() * words.length);
+
+        // Update the text with the word at the random index
+        document.getElementById(
+          "container1"
+        ).innerHTML = `<div class="word">${words[randomIndex]}</div>`;
+      }
+
+      setInterval(updateText, 1900);
       function checkWord() {
         // Get the value of the input field
         var word = document.getElementById("input").value;
